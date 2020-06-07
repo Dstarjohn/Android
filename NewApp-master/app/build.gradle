@@ -1,0 +1,56 @@
+apply plugin: 'com.android.application'
+apply from: "$rootDir/config.gradle"
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion '27.0.3'
+    defaultConfig {
+        applicationId "com.stx.xhb.dmgameapp"
+        minSdkVersion 15
+        targetSdkVersion 28
+        versionCode 15
+        versionName "3.4"
+        multiDexEnabled true
+        flavorDimensions "DimenA"
+        ndk {
+            //选择要添加的对应cpu类型的.so库。
+            abiFilters 'armeabi', 'armeabi-v7a', 'armeabi-v8a', 'x86', 'x86_64', 'mips', 'mips64'
+        }
+        manifestPlaceholders = [
+                JPUSH_PKGNAME: "com.stx.xhb.dmgameapp",
+                JPUSH_APPKEY : "1d606486b7fd03d82a683ecd", //JPush上注册的包名对应的appkey.
+                JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
+        ]
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath = true
+            }
+        }
+
+    }
+
+    productFlavors {
+        tencent {
+            dimension "DimenA"
+            manifestPlaceholders = [CHANNEL: "Tencent"]
+        }
+        wandoujia {
+            dimension "DimenA"
+            manifestPlaceholders = [CHANNEL: "Wandoujia"]
+        }
+    }
+
+    lintOptions {
+        disable "ResourceType"
+        checkReleaseBuilds false
+        abortOnError false
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(':core')
+    implementation 'com.github.xiaohaibin:XBanner:1.6.4'
+    implementation 'com.jude:easyrecyclerview:4.4.2'
+    implementation files('libs/GDTUnionSDK.TBS.4.19.574.min.jar')
+}

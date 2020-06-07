@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+        <com.stx.core.widget.ClearEditText
+            android:id="@+id/ed_account"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@null"
+            android:drawableLeft="@drawable/user_name"
+            android:drawablePadding="10dp"
+            android:hint="手机号"
+            android:maxLength="11"
+            android:singleLine="true"
+            android:textSize="14dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/divider" />
+
+        <com.stx.core.widget.HidePwEditText
+            android:id="@+id/ed_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@null"
+            android:drawableLeft="@drawable/user_password"
+            android:drawablePadding="10dp"
+            android:hint="密码（密码长度不能少于8位）"
+            android:inputType="textPassword"
+            android:singleLine="true"
+            android:textSize="14dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/divider" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite"
+        android:paddingLeft="10dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/ed_code"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:drawableLeft="@drawable/user_email"
+            android:drawablePadding="6dp"
+            android:hint="验证码"
+            android:inputType="number"
+            android:singleLine="true"
+            android:textSize="14dp" />
+
+        <com.stx.core.widget.CountDownButton
+            android:id="@+id/tv_get_code"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/selector_btn_getcode"
+            android:gravity="center"
+            android:text="获取验证码"
+            android:textColor="@color/colorWhite" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/btn_register"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/colorWhite"
+        android:foreground="?selectableItemBackground"
+        android:gravity="center"
+        android:text="立即注册"
+        android:textColor="@color/color_008cf0"
+        android:textSize="15dp" />
+
+</LinearLayout>

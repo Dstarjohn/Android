@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              tools:context="com.stx.xhb.dmgameapp.mvp.ui.activity.MainActivity">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/main_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/common_line"/>
+
+    <RadioGroup
+        android:id="@+id/main_rgp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="3dp"
+        android:gravity="center_horizontal"
+        android:background="@color/colorWhite"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/menu_news_selector"
+            android:gravity="center"
+            android:drawablePadding="2dp"
+            android:text="资讯"
+            android:textColor="@drawable/menu_color_selector"
+            android:textSize="14sp"/>
+
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawablePadding="2dp"
+            android:drawableTop="@drawable/menu_game_selector"
+            android:gravity="center"
+            android:text="游戏"
+            android:textColor="@drawable/menu_color_selector"
+            android:textSize="14sp"/>
+
+
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawablePadding="2dp"
+            android:drawableTop="@drawable/menu_topic_selector"
+            android:gravity="center"
+            android:text="论坛"
+            android:textColor="@drawable/menu_color_selector"
+            android:textSize="14sp"/>
+
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/menu_mine_selector"
+            android:gravity="center"
+            android:drawablePadding="2dp"
+            android:text="我的"
+            android:textColor="@drawable/menu_color_selector"
+            android:textSize="14sp"/>
+
+    </RadioGroup>
+</LinearLayout>

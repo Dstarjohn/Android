@@ -1,0 +1,31 @@
+package com.stx.xhb.dmgameapp.data.body;
+
+import com.stx.core.utils.StringUtils;
+
+/*
+ * @author lx
+ */
+public class SendSmsContent {
+
+    /**
+     * mobile : 18502339836
+     * act : 1 注册   4 忘记密码  5  绑定手机号
+     * uid : 0
+     * time : 1538105804999
+     * sign : 35f6498ada7f02e5c7e535a8a9bf9641
+     */
+
+    private String mobile;
+    private int act;
+    private int uid;
+    private long time;
+    private String sign;
+
+    public SendSmsContent(String mobile, int act, int uid) {
+        this.mobile = mobile;
+        this.act = act;
+        this.uid = uid;
+        this.time = System.currentTimeMillis();
+        this.sign = StringUtils.getMD5(mobile + act + uid + time);
+    }
+}

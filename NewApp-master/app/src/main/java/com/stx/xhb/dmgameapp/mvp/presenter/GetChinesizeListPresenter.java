@@ -1,0 +1,48 @@
+package com.stx.xhb.dmgameapp.mvp.presenter;
+
+import com.stx.core.mvp.BasePresenter;
+import com.stx.xhb.dmgameapp.data.callback.LoadTaskCallback;
+import com.stx.xhb.dmgameapp.data.entity.SaleGameBean;
+import com.stx.xhb.dmgameapp.data.remote.TasksRepositoryProxy;
+import com.stx.xhb.dmgameapp.mvp.contract.GetChinesizeListContract;
+
+import rx.Subscription;
+
+/*
+ * @author lx
+ * @describe: 汉化游戏
+ */
+public class GetChinesizeListPresenter extends BasePresenter<GetChinesizeListContract.View> implements GetChinesizeListContract.Model{
+    @Override
+    public void getChinesizeGame(int currentPage, final int order) {
+        if (getView()==null){
+            return;
+        }
+        Subscription subscription = TasksRepositoryProxy.getInstance().getChinesizeGame(currentPage, order, new LoadTaskCallback<SaleGameBean>() {
+            @Override
+            public void onStart() {
+                getView().showLoading();
+            }
+
+            @Override
+            public void onTaskLoaded(SaleGameBean data) {
+                if (order == 1) {
+                    getView().getNewGame(data);
+                } else {
+                    getView().getHotGame(data);
+                }
+            }
+
+            @Override
+            public void onDataNotAvailable(String msg) {
+                getView().getFailed(msg);
+            }
+
+            @Override
+            public void onCompleted() {
+                getView().hideLoading();
+            }
+        });
+        addSubscription(subscription);
+    }
+}

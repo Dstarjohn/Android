@@ -1,0 +1,11 @@
+*.iml
+.gradle
+/local.properties
+/.idea
+/build
+/captures
+keystore.properties
+app/app-tencent-release.apk
+app/app-wandoujia-release.apk
+app/build/
+key/3dmgame.jks
