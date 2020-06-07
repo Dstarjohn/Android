@@ -12,7 +12,7 @@
   
 ### 效果图
   
-   ![00](https://github.com/Dstarjohn/Android/tree/master/image/00.png) ![00] 
+   ![00](https://github.com/Dstarjohn/Android/tree/master/image/00.png)
    ![01](https://github.com/Dstarjohn/Android/tree/master/image/01.png)
    ![10](https://github.com/Dstarjohn/Android/tree/master/image/10.png)
    ![11](https://github.com/Dstarjohn/Android/tree/master/image/11.png) 
